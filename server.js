@@ -10,6 +10,8 @@ http.createServer(function(req, res) {
   var str = segments[0];
   var size = parseInt(segments[1]);
 
+  console.log('GET ' + pathname);
+
   if (isNaN(size) || size <= 0 || size > 1024) {
     res.writeHead(400);
     res.write('Invalid size');
