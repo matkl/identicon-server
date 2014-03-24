@@ -7,6 +7,6 @@
   },
   "main": "./server",
   "dependencies": {
-    "identicon": "git://github.com/matkl/node-identicon"
+    "identicon": "0.0.1"
   }
 }
