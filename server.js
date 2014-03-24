@@ -5,11 +5,10 @@ var url = require('url');
 var port = process.env.PORT || 3000;
 
 http.createServer(function(req, res) {
-  var parsedUrl = url.parse(req.url);
-  var pathname = parsedUrl.pathname;
-  var parts = pathname.substr(1).split('/');
-  var str = parts[0];
-  var size = parseInt(parts[1]);
+  var pathname = url.parse(req.url).pathname;
+  var segments = pathname.substr(1).split('/');
+  var str = segments[0];
+  var size = parseInt(segments[1]);
 
   if (isNaN(size) || size <= 0 || size > 1024) {
     res.writeHead(400);
